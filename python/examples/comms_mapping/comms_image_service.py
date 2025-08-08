@@ -512,6 +512,7 @@ class CommsMapImageRenderer():
     def __init__(self, testmode, options):
         # Instantiate robot for use in getting state
         try:
+            sdk = bosdyn.client.create_standard_sdk('CommsMapperRenderer')
             self.robot = sdk.create_robot(options.hostname)
             self.robot.authenticate_from_payload_credentials(GUID, SECRET)
             self.robot_state_client = self.robot.ensure_client(

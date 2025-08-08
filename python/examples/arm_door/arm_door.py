@@ -11,6 +11,10 @@
     The use of an external estop client is required.
 """
 
+import os
+# Fix for Wayland/Qt compatibility issues with OpenCV
+os.environ['QT_QPA_PLATFORM'] = 'xcb'
+
 import argparse
 import math
 import sys
